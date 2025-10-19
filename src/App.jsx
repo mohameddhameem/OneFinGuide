@@ -184,93 +184,93 @@ const InvestmentDashboard = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 bg-gray-50 min-h-screen">
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg shadow-lg mb-6">
-        <h1 className="text-3xl font-bold flex items-center gap-3">
-          <TrendingUp className="w-8 h-8" />
-          Investment Comparison Calculator
+    <div className="w-full max-w-7xl mx-auto p-2 sm:p-4 bg-gray-50 min-h-screen">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-4 sm:p-6 rounded-lg shadow-lg mb-4 sm:mb-6">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold flex items-center gap-2 sm:gap-3">
+          <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8" />
+          Investment Calculator
         </h1>
-        <p className="mt-2 text-blue-100">Compare rental property, bonds, and fixed deposits with customizable parameters</p>
+        <p className="mt-2 text-sm sm:text-base text-blue-100">Compare rental, bonds, and fixed deposits</p>
       </div>
 
-      <div className="bg-white rounded-lg shadow-md mb-6 overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md mb-4 sm:mb-6 overflow-hidden">
         <button
           onClick={() => setShowInputs(!showInputs)}
-          className="w-full bg-gray-100 hover:bg-gray-200 p-4 flex items-center justify-between font-semibold text-gray-800 transition"
+          className="w-full bg-gray-100 hover:bg-gray-200 p-3 sm:p-4 flex items-center justify-between font-semibold text-sm sm:text-base text-gray-800 transition"
         >
           <span className="flex items-center gap-2">
-            <Settings className="w-5 h-5" />
+            <Settings className="w-4 h-4 sm:w-5 sm:h-5" />
             Input Parameters
           </span>
           <span>{showInputs ? '▲' : '▼'}</span>
         </button>
         
         {showInputs && (
-          <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="p-3 sm:p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="col-span-full">
-              <h3 className="font-semibold text-lg text-gray-800 mb-3 border-b pb-2">General</h3>
+              <h3 className="font-semibold text-base sm:text-lg text-gray-800 mb-2 sm:mb-3 border-b pb-2">General</h3>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Initial Investment (₹)
               </label>
               <input
                 type="number"
                 value={inputs.initialInvestment}
                 onChange={(e) => handleInputChange('initialInvestment', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Analysis Period (Years)
               </label>
               <input
                 type="number"
                 value={inputs.years}
                 onChange={(e) => handleInputChange('years', parseInt(e.target.value) || 1)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            <div className="col-span-full mt-4">
-              <h3 className="font-semibold text-lg text-blue-700 mb-3 border-b border-blue-200 pb-2">Rental Property</h3>
+            <div className="col-span-full mt-2 sm:mt-4">
+              <h3 className="font-semibold text-base sm:text-lg text-blue-700 mb-2 sm:mb-3 border-b border-blue-200 pb-2">Rental Property</h3>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Number of Houses
               </label>
               <input
                 type="number"
                 value={inputs.houses}
                 onChange={(e) => handleInputChange('houses', parseInt(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Monthly Rent per House (₹)
               </label>
               <input
                 type="number"
                 value={inputs.monthlyRentPerHouse}
                 onChange={(e) => handleInputChange('monthlyRentPerHouse', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Monthly Maintenance (Total) (₹)
               </label>
               <input
                 type="number"
                 value={inputs.monthlyMaintenance}
                 onChange={(e) => handleInputChange('monthlyMaintenance', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Rent Inflation Rate (%)
               </label>
               <input
@@ -278,15 +278,15 @@ const InvestmentDashboard = () => {
                 step="0.1"
                 value={inputs.rentInflationRate}
                 onChange={(e) => handleInputChange('rentInflationRate', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            <div className="col-span-full mt-4">
-              <h3 className="font-semibold text-lg text-red-700 mb-3 border-b border-red-200 pb-2">Infrastructure Bond</h3>
+            <div className="col-span-full mt-2 sm:mt-4">
+              <h3 className="font-semibold text-base sm:text-lg text-red-700 mb-2 sm:mb-3 border-b border-red-200 pb-2">Infrastructure Bond</h3>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Annual Interest Rate (%)
               </label>
               <input
@@ -294,26 +294,26 @@ const InvestmentDashboard = () => {
                 step="0.1"
                 value={inputs.bondRate}
                 onChange={(e) => handleInputChange('bondRate', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Bond Maturity (Years)
               </label>
               <input
                 type="number"
                 value={inputs.bondMaturity}
                 onChange={(e) => handleInputChange('bondMaturity', parseInt(e.target.value) || 1)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            <div className="col-span-full mt-4">
-              <h3 className="font-semibold text-lg text-green-700 mb-3 border-b border-green-200 pb-2">Fixed Deposit</h3>
+            <div className="col-span-full mt-2 sm:mt-4">
+              <h3 className="font-semibold text-base sm:text-lg text-green-700 mb-2 sm:mb-3 border-b border-green-200 pb-2">Fixed Deposit</h3>
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Annual Interest Rate (%)
               </label>
               <input
@@ -321,15 +321,15 @@ const InvestmentDashboard = () => {
                 step="0.1"
                 value={inputs.fdRate}
                 onChange={(e) => handleInputChange('fdRate', parseFloat(e.target.value) || 0)}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-2 sm:px-3 py-1.5 sm:py-2 text-sm sm:text-base border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1">
                 Interest Compounding
               </label>
-              <div className="flex items-center gap-4 mt-2">
-                <label className="flex items-center gap-2 cursor-pointer">
+              <div className="flex items-center gap-3 sm:gap-4 mt-2">
+                <label className="flex items-center gap-2 cursor-pointer text-sm sm:text-base">
                   <input
                     type="radio"
                     checked={!inputs.fdCompounding}
@@ -338,7 +338,7 @@ const InvestmentDashboard = () => {
                   />
                   <span>Simple</span>
                 </label>
-                <label className="flex items-center gap-2 cursor-pointer">
+                <label className="flex items-center gap-2 cursor-pointer text-sm sm:text-base">
                   <input
                     type="radio"
                     checked={inputs.fdCompounding}
@@ -353,76 +353,76 @@ const InvestmentDashboard = () => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 rounded-lg border-2 border-blue-300 shadow-md">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-semibold text-blue-900">Rental Investment</h3>
-            <Calendar className="w-5 h-5 text-blue-600" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
+        <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-3 sm:p-5 rounded-lg border-2 border-blue-300 shadow-md">
+          <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <h3 className="font-semibold text-sm sm:text-base text-blue-900">Rental Investment</h3>
+            <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
           </div>
-          <p className="text-sm text-blue-700 mb-1">Break-even: Year {breakEvenYears.rent}</p>
-          <p className="text-3xl font-bold text-blue-600 mb-1">
+          <p className="text-xs sm:text-sm text-blue-700 mb-1">Break-even: Year {breakEvenYears.rent}</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">
             {formatCurrency(finalYearData.rent.profit)}
           </p>
           <p className="text-xs text-gray-600">Profit after {inputs.years} years</p>
-          <p className="text-sm font-semibold text-blue-700 mt-2">ROI: {finalYearData.rent.roi}%</p>
+          <p className="text-xs sm:text-sm font-semibold text-blue-700 mt-1 sm:mt-2">ROI: {finalYearData.rent.roi}%</p>
         </div>
         
-        <div className="bg-gradient-to-br from-red-50 to-red-100 p-5 rounded-lg border-2 border-red-300 shadow-md">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-semibold text-red-900">Infrastructure Bond</h3>
-            <DollarSign className="w-5 h-5 text-red-600" />
+        <div className="bg-gradient-to-br from-red-50 to-red-100 p-3 sm:p-5 rounded-lg border-2 border-red-300 shadow-md">
+          <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <h3 className="font-semibold text-sm sm:text-base text-red-900">Infrastructure Bond</h3>
+            <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
           </div>
-          <p className="text-sm text-red-700 mb-1">Break-even: Year {breakEvenYears.bond}</p>
-          <p className="text-3xl font-bold text-red-600 mb-1">
+          <p className="text-xs sm:text-sm text-red-700 mb-1">Break-even: Year {breakEvenYears.bond}</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-red-600 mb-1">
             {formatCurrency(finalYearData.bond.profit)}
           </p>
           <p className="text-xs text-gray-600">Profit after {inputs.years} years</p>
-          <p className="text-sm font-semibold text-red-700 mt-2">ROI: {finalYearData.bond.roi}%</p>
+          <p className="text-xs sm:text-sm font-semibold text-red-700 mt-1 sm:mt-2">ROI: {finalYearData.bond.roi}%</p>
         </div>
         
-        <div className="bg-gradient-to-br from-green-50 to-green-100 p-5 rounded-lg border-2 border-green-300 shadow-md">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="font-semibold text-green-900">Fixed Deposit</h3>
-            <TrendingUp className="w-5 h-5 text-green-600" />
+        <div className="bg-gradient-to-br from-green-50 to-green-100 p-3 sm:p-5 rounded-lg border-2 border-green-300 shadow-md">
+          <div className="flex items-center justify-between mb-2 sm:mb-3">
+            <h3 className="font-semibold text-sm sm:text-base text-green-900">Fixed Deposit</h3>
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
           </div>
-          <p className="text-sm text-green-700 mb-1">Break-even: Year {breakEvenYears.fd}</p>
-          <p className="text-3xl font-bold text-green-600 mb-1">
+          <p className="text-xs sm:text-sm text-green-700 mb-1">Break-even: Year {breakEvenYears.fd}</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-600 mb-1">
             {formatCurrency(finalYearData.fd.profit)}
           </p>
           <p className="text-xs text-gray-600">Profit after {inputs.years} years</p>
-          <p className="text-sm font-semibold text-green-700 mt-2">ROI: {finalYearData.fd.roi}%</p>
+          <p className="text-xs sm:text-sm font-semibold text-green-700 mt-1 sm:mt-2">ROI: {finalYearData.fd.roi}%</p>
         </div>
       </div>
 
-      <div className="mb-4 flex flex-wrap gap-2">
+      <div className="mb-3 sm:mb-4 flex flex-wrap gap-2">
         <button
           onClick={() => setSelectedView('profit')}
-          className={`px-4 py-2 rounded font-medium transition ${selectedView === 'profit' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
+          className={`px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded font-medium transition ${selectedView === 'profit' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
         >
-          Year-on-Year Profit
+          Profit
         </button>
         <button
           onClick={() => setSelectedView('cumulative')}
-          className={`px-4 py-2 rounded font-medium transition ${selectedView === 'cumulative' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
+          className={`px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded font-medium transition ${selectedView === 'cumulative' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
         >
-          Cumulative Returns
+          Cumulative
         </button>
         <button
           onClick={() => setSelectedView('annual')}
-          className={`px-4 py-2 rounded font-medium transition ${selectedView === 'annual' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
+          className={`px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded font-medium transition ${selectedView === 'annual' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
         >
-          Annual Income
+          Annual
         </button>
         <button
           onClick={() => setSelectedView('breakeven')}
-          className={`px-4 py-2 rounded font-medium transition ${selectedView === 'breakeven' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
+          className={`px-2 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm rounded font-medium transition ${selectedView === 'breakeven' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-gray-700 border hover:bg-gray-50'}`}
         >
-          Break-even Comparison
+          Break-even
         </button>
       </div>
 
-      <div className="bg-white p-4 rounded-lg shadow-md mb-6">
-        <ResponsiveContainer width="100%" height={400}>
+      <div className="bg-white p-2 sm:p-4 rounded-lg shadow-md mb-4 sm:mb-6">
+        <ResponsiveContainer width="100%" height={300}>
           {selectedView === 'profit' ? (
             <LineChart data={data}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -472,43 +472,43 @@ const InvestmentDashboard = () => {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-2 sm:gap-0 mb-3 sm:mb-4">
         <button
           onClick={() => setShowTable(!showTable)}
-          className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-800 font-medium transition"
+          className="px-3 sm:px-4 py-2 bg-gray-700 text-white text-xs sm:text-sm rounded hover:bg-gray-800 font-medium transition"
         >
           {showTable ? 'Hide' : 'Show'} Detailed Table
         </button>
         <button
           onClick={exportToCSV}
-          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 font-medium transition"
+          className="px-3 sm:px-4 py-2 bg-green-600 text-white text-xs sm:text-sm rounded hover:bg-green-700 font-medium transition"
         >
           Export to CSV
         </button>
       </div>
 
       {showTable && (
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden mb-4 sm:mb-6">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full text-xs sm:text-sm">
               <thead className="bg-gray-800 text-white border-b-2 border-gray-900">
                 <tr>
-                  <th className="px-3 py-3 text-left font-semibold sticky left-0 bg-gray-800 z-10">Year</th>
-                  <th className="px-3 py-3 text-center font-semibold" colSpan="3">Rental Investment</th>
-                  <th className="px-3 py-3 text-center font-semibold" colSpan="3">Infrastructure Bond</th>
-                  <th className="px-3 py-3 text-center font-semibold" colSpan="3">Fixed Deposit</th>
+                  <th className="px-2 sm:px-3 py-2 sm:py-3 text-left font-semibold sticky left-0 bg-gray-800 z-10">Yr</th>
+                  <th className="px-2 sm:px-3 py-2 sm:py-3 text-center font-semibold" colSpan="3">Rental</th>
+                  <th className="px-2 sm:px-3 py-2 sm:py-3 text-center font-semibold" colSpan="3">Bond</th>
+                  <th className="px-2 sm:px-3 py-2 sm:py-3 text-center font-semibold" colSpan="3">FD</th>
                 </tr>
                 <tr className="bg-gray-700">
-                  <th className="px-3 py-2 text-left text-xs sticky left-0 bg-gray-700 z-10"></th>
-                  <th className="px-3 py-2 text-right text-xs">Annual</th>
-                  <th className="px-3 py-2 text-right text-xs">Cumulative</th>
-                  <th className="px-3 py-2 text-right text-xs">Profit</th>
-                  <th className="px-3 py-2 text-right text-xs">Annual</th>
-                  <th className="px-3 py-2 text-right text-xs">Cumulative</th>
-                  <th className="px-3 py-2 text-right text-xs">Profit</th>
-                  <th className="px-3 py-2 text-right text-xs">Annual</th>
-                  <th className="px-3 py-2 text-right text-xs">Cumulative</th>
-                  <th className="px-3 py-2 text-right text-xs">Profit</th>
+                  <th className="px-2 sm:px-3 py-1 sm:py-2 text-left text-xs sticky left-0 bg-gray-700 z-10"></th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Ann</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Cum</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Profit</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Ann</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Cum</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Profit</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Ann</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Cum</th>
+                  <th className="px-1 sm:px-3 py-1 sm:py-2 text-right text-xs">Profit</th>
                 </tr>
               </thead>
               <tbody>
@@ -517,26 +517,26 @@ const InvestmentDashboard = () => {
                     key={row.year} 
                     className={`border-b ${idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'} hover:bg-blue-50 transition`}
                   >
-                    <td className="px-3 py-2 font-semibold sticky left-0 bg-inherit z-10">{row.year}</td>
+                    <td className="px-2 sm:px-3 py-1.5 sm:py-2 font-semibold sticky left-0 bg-inherit z-10">{row.year}</td>
                     
-                    <td className="px-3 py-2 text-right text-blue-700">{formatCurrency(row.rentIncome)}</td>
-                    <td className="px-3 py-2 text-right font-medium">{formatCurrency(row.rentCumulative)}</td>
-                    <td className={`px-3 py-2 text-right font-bold ${row.rentProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {row.rentBreakEven && !data[idx - 1]?.rentBreakEven && <span className="text-xs bg-green-400 text-white px-1.5 py-0.5 rounded mr-1">✓</span>}
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right text-blue-700">{formatCurrency(row.rentIncome)}</td>
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right font-medium">{formatCurrency(row.rentCumulative)}</td>
+                    <td className={`px-1 sm:px-3 py-1.5 sm:py-2 text-right font-bold ${row.rentProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {row.rentBreakEven && !data[idx - 1]?.rentBreakEven && <span className="text-xs bg-green-400 text-white px-1 py-0.5 rounded mr-1">✓</span>}
                       {formatCurrency(row.rentProfit)}
                     </td>
                     
-                    <td className="px-3 py-2 text-right text-red-700">{formatCurrency(row.bondIncome)}</td>
-                    <td className="px-3 py-2 text-right font-medium">{formatCurrency(row.bondCumulative)}</td>
-                    <td className={`px-3 py-2 text-right font-bold ${row.bondProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {row.bondBreakEven && !data[idx - 1]?.bondBreakEven && <span className="text-xs bg-green-400 text-white px-1.5 py-0.5 rounded mr-1">✓</span>}
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right text-red-700">{formatCurrency(row.bondIncome)}</td>
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right font-medium">{formatCurrency(row.bondCumulative)}</td>
+                    <td className={`px-1 sm:px-3 py-1.5 sm:py-2 text-right font-bold ${row.bondProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {row.bondBreakEven && !data[idx - 1]?.bondBreakEven && <span className="text-xs bg-green-400 text-white px-1 py-0.5 rounded mr-1">✓</span>}
                       {formatCurrency(row.bondProfit)}
                     </td>
                     
-                    <td className="px-3 py-2 text-right text-green-700">{formatCurrency(row.fdIncome)}</td>
-                    <td className="px-3 py-2 text-right font-medium">{formatCurrency(row.fdCumulative)}</td>
-                    <td className={`px-3 py-2 text-right font-bold ${row.fdProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      {row.fdBreakEven && !data[idx - 1]?.fdBreakEven && <span className="text-xs bg-green-400 text-white px-1.5 py-0.5 rounded mr-1">✓</span>}
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right text-green-700">{formatCurrency(row.fdIncome)}</td>
+                    <td className="px-1 sm:px-3 py-1.5 sm:py-2 text-right font-medium">{formatCurrency(row.fdCumulative)}</td>
+                    <td className={`px-1 sm:px-3 py-1.5 sm:py-2 text-right font-bold ${row.fdProfit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {row.fdBreakEven && !data[idx - 1]?.fdBreakEven && <span className="text-xs bg-green-400 text-white px-1 py-0.5 rounded mr-1">✓</span>}
                       {formatCurrency(row.fdProfit)}
                     </td>
                   </tr>
@@ -547,40 +547,40 @@ const InvestmentDashboard = () => {
         </div>
       )}
 
-      <div className="mt-6 text-sm text-gray-700 bg-blue-50 p-5 rounded-lg border border-blue-200">
-        <p className="font-semibold mb-3 text-blue-900 flex items-center gap-2">
-          <span className="text-lg">ℹ️</span> Key Information
+      <div className="mt-4 sm:mt-6 text-xs sm:text-sm text-gray-700 bg-blue-50 p-3 sm:p-5 rounded-lg border border-blue-200">
+        <p className="font-semibold mb-2 sm:mb-3 text-blue-900 flex items-center gap-2">
+          <span className="text-base sm:text-lg">ℹ️</span> Key Information
         </p>
-        <ul className="space-y-2 ml-4">
-          <li className="flex items-start gap-2">
+        <ul className="space-y-1 sm:space-y-2 ml-3 sm:ml-4">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span><strong>Break-even:</strong> When cumulative returns equal initial investment</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span><strong>Profit:</strong> Cumulative returns minus initial investment</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span><strong>ROI:</strong> Return on Investment = (Profit / Initial Investment) × 100%</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span>Green checkmark (✓) indicates the break-even year in the table</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span>All calculations update in real-time as you modify input parameters</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span>Bond returns principal at maturity (Year {inputs.bondMaturity}). Profit calculation shows interest earned before maturity, then total profit after principal return</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span>FD uses {inputs.fdCompounding ? 'compound' : 'simple'} interest calculation. Principal is safe; profit shows interest earned</span>
           </li>
-          <li className="flex items-start gap-2">
+          <li className="flex items-start gap-1 sm:gap-2">
             <span className="text-blue-600 font-bold">•</span>
             <span><strong>Bond & FD:</strong> Principal-protected investments - profit never goes negative as principal is returned</span>
           </li>
